@@ -1,19 +1,19 @@
 ## This script downloads in bulk NASA's image of the day to a local directory
-## Modifications should be made to "start_date" and "end_date" parameters as well as the directory location
 
 import requests
 import json
 import webbrowser
 import urllib.request
 import ssl
+import os
 
 #had to bypass ssl certification for https downloads to work
 ssl._create_default_https_context = ssl._create_unverified_context
 
 #API URL
-url='https://api.nasa.gov/planetary/apod'
+url= 'https://api.nasa.gov/planetary/apod'
 #API Key
-key='SPeaDkD87BSV8tpEzbRU5ZAQkiREDAGKAMTM05Jv'
+key= os.getenv(API_KEY)
 
 #API Parameters
 params = {
